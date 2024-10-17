@@ -33,7 +33,7 @@ def home():
                 }
 
                 h1 {
-                    font-size: 50px; /* Set font size to 50 pixels */
+                    font-size: 55px; /* Set font size to 50 pixels */
                     color: #333; /* Dark color for text */
                     margin-bottom: 20px; /* Add some space below the header */
                 }
@@ -77,14 +77,14 @@ def home():
                 }
 
                 h1 {
-                    font-size: 32px; /* Set font size to 50 pixels */
+                    font-size: 30px; /* Set font size to 50 pixels */
                     color: #333; /* Dark color for text */
                     margin-bottom: 20px; /* Add some space below the header */
                 }
 
                 p {
                     font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
-                    font-size: 25px; /* Optional: Set a specific size for paragraph text */
+                    font-size: 22px; /* Optional: Set a specific size for paragraph text */
                     color: #555; /* Slightly lighter color for paragraph text */
                 }
             </style>
@@ -99,7 +99,7 @@ def home():
 
     """    
     )
-    st.image("IT.jpeg", use_column_width=True)
+    st.image("advice.jpg", use_column_width=True)
     st.html(
         """
         <!DOCTYPE html>
@@ -121,14 +121,14 @@ def home():
                 }
 
                 h1 {
-                    font-size: 32px; /* Set font size to 50 pixels */
+                    font-size: 30px; /* Set font size to 50 pixels */
                     color: #333; /* Dark color for text */
                     margin-bottom: 20px; /* Add some space below the header */
                 }
 
                 p {
                     font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
-                    font-size: 25px; /* Optional: Set a specific size for paragraph text */
+                    font-size: 22px; /* Optional: Set a specific size for paragraph text */
                     color: #555; /* Slightly lighter color for paragraph text */
                 }
             </style>
@@ -165,14 +165,14 @@ def home():
                 }
 
                 h1 {
-                    font-size: 32px; /* Set font size to 50 pixels */
+                    font-size: 30px; /* Set font size to 50 pixels */
                     color: #333; /* Dark color for text */
                     margin-bottom: 20px; /* Add some space below the header */
                 }
 
                 p {
                     font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
-                    font-size: 25px; /* Optional: Set a specific size for paragraph text */
+                    font-size: 22px; /* Optional: Set a specific size for paragraph text */
                     color: #555; /* Slightly lighter color for paragraph text */
                 }
             </style>
