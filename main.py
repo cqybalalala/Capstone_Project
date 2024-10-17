@@ -43,9 +43,10 @@ def product():
             list1.append(content)
         recommendation = list_gen(list1)
         st.write(recommendation)
-        if st.button('Send me an copy'):
-            gmail = st.text_input('Enter your email:' )
-            to_send_email(gmail, recommendation, 'Your recommendation')
+        st.session_state.recommendation = recommendation
+        if st.button('Send me a copy'):
+            email()
+            
 
 def image():
     st.title("IT Product Identifier")
@@ -73,6 +74,7 @@ def image():
 def email():
     st.write("Welcome to the email section")
     email = st.text_input("Enter your email:")
+    to_send_email(email, st.session_state.recommendation, 'Your Copy')
 
 
 # Page navigation using a sidebar
