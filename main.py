@@ -16,111 +16,39 @@ def home():
     st.image("ITdevices.jpg", use_column_width=True)
     st.html(
         """
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
+    <html lang="en">
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Furniture Haven</title>
+        <title>Playfair Display Example</title>
 
         <!-- Link to Google Fonts for Playfair Display -->
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
 
         <style>
-          body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
-          }
-
-          .hero {
-            height: 100vh; /* Full viewport height */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover; /* Ensures the image covers the full area */
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center alignment vertically */
-            justify-content: center; /* Center alignment horizontally */
-            transition: background-image 2s ease-in-out; /* Smooth transition when background image changes */
-          }
-
-          .tagline {
-            position: absolute;
-            top: 30px; /* Position the text near the top */
-            font-size: 24px;
-            color: white;
-            font-weight: 700; /* Bold weight for the tagline */
-          }
-
-          h1 {
-            color: white;
-            font-size: 100px; /* Larger text size */
-            font-weight: 300; /* Slimmer font weight for the heading */
-            text-align: center;
-            margin: 0;
-            animation: slideUp 2s forwards;
-          }
-
-          @keyframes slideUp {
-            from {
-              transform: translateY(100%);
+            body {
+                font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4; /* Light background for contrast */
             }
-            to {
-              transform: translateY(-50%);
+
+            h1 {
+                font-size: 50px; /* Set font size to 50 pixels */
+                color: #333; /* Dark color for text */
             }
-          }
         </style>
-        </head>
-        <body>
+    </head>
+    <body>
 
-        <div class="hero" id="hero">
-          <div class="tagline">Furniture Haven</div> <!-- Furniture Haven text at the top -->
-          <h1>Furniture, decor, and</h1>
-          <h1>beyond</h1>
-        </div>
-        <!-- JavaScript for background slideshow -->
-        <script>
-        const hero = document.getElementById('hero');
+        <h1>Welcome to Playfair Display</h1>
+        <p>This is an example of text using the Playfair Display font at a size of 50 pixels.</p>
 
-        // Array of image paths for the slideshow
-        const images = [
-          "ITdevices.jpg", 
-          "ITdevices.jpg",
-          "ITdevices.jpg",
-          "ITdevices.jpg",
-          "ITdevices.jpg"
-        ];
-
-        let currentIndex = 0;
-
-        // Function to change the background image smoothly
-        function changeBackground() {
-          // Update the background image
-          currentIndex = (currentIndex + 1) % images.length;
-          hero.style.backgroundImage = `url(${images[currentIndex]})`;
-        }
-
-        // Set initial background image
-        hero.style.backgroundImage = `url(${images[0]})`;
-
-        // Change the background every 4 seconds
-        setInterval(changeBackground, 4000);
-        </script>
-
-        </body>
-        </html>
-
-        """        
+    </body>
+    </html>
+    """    
     )
 
-    #st.image("./ITdevices.png")
-
-    #image = Image.open('content/IT deives.png')
-    #st.image(image, caption = 'IT Devices')
-
-    #st.image("ITdevices.jpg", caption="") 
 def product():
     st.write("Welcome to the product suggestion page")
 
