@@ -49,7 +49,7 @@ def image():
 
     if product_image is not None:
         # Open and display the uploaded image
-        img = PILImage.open(product_image)
+        img = PIL.Image.open(product_image)
         img.thumbnail((800, 800))  # Resize the image to max 800x800 pixels
         st.image(img, caption="Uploaded IT Product Image", use_column_width=True)
 
