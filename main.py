@@ -192,6 +192,7 @@ def home():
     
 
 def product():
+    st.image("advice.jpg", use_column_width=True)
     st.write("Welcome to the product suggestion page")
 
     product = st.text_input("What product/package do you want:")
@@ -219,6 +220,7 @@ def product():
             
 
 def image():
+    st.image("image.jpg", use_column_width=True)
     st.title("IT Product Identifier")
 
     # Upload an image
@@ -242,6 +244,7 @@ def image():
         st.write("Please upload a picture of an IT product to identify.")
 
 def email():
+    st.image("email.jpg", use_column_width=True)
     st.write("Welcome to the email section")
     email = st.text_input("Enter your email:")
     if st.button('Send me a copy'):
@@ -252,7 +255,7 @@ def email():
 # Create a horizontal navigation menu
 selected = option_menu(
     menu_title="IT Devices Suggestion Model",
-    options=["Home", "Product Suggestion", "Product Search", "Email"],
+    options=["Home", "Suggestion", "Search", "Email"],
     icons=["house", "search", "cloud-upload", "envelope"],
     menu_icon="cast",
     default_index=0,
@@ -262,10 +265,10 @@ selected = option_menu(
 if selected == "Home":
     home()
 # Product Suggestion Section
-elif selected == "Product Suggestion":
+elif selected == "Suggestion":
     product()
 # Upload Section
-elif selected == "Product Search":
+elif selected == "Search":
     image()
 # Email Section
 if selected == "Email":
