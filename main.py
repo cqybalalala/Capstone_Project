@@ -7,7 +7,7 @@ from llmmodel import json_translate
 from webscraping import amazon_scraper_sort
 from llmmodel import list_gen
 from image_search_function import it_product_analysis
-from email import send_email
+from smtp import send_email
 
 
 
