@@ -6,7 +6,6 @@ import ast
 from llmmodel import suggestion_gen 
 from llmmodel import json_translate
 from webscraping import amazon_scraper_sort
-from webscraping import recommend_product
 from llmmodel import list_gen
 
 

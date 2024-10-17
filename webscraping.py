@@ -57,8 +57,6 @@ def recommend_product(code):
   return response.choices[0].message.content
 
 
-
-
 def amazon_scraper_sort(product):
     api_key = st.secrets['SCRAPER_API_KEY']
     url = f"https://www.amazon.com/s?k={product.replace(' ', '+')}"
@@ -108,8 +106,5 @@ def amazon_scraper_sort(product):
     return json_output
 
 
-
-#json_list = amazon_scraper_sort('RTX 4090')
-#print(recommend_product(json_list))
 
   
