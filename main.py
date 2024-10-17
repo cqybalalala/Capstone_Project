@@ -1,20 +1,119 @@
+import ast
+
 import streamlit as st
 from PIL import Image
-import json
-import ast
-from llmmodel import suggestion_gen 
-from llmmodel import json_translate
-from webscraping import amazon_scraper_sort
-from llmmodel import list_gen
-from image_search_function import it_product_analysis
-from email_server import to_send_email
 from streamlit_option_menu import option_menu
+
+from email_server import to_send_email
+from image_search_function import it_product_analysis
+from llmmodel import json_translate, list_gen, suggestion_gen
+from webscraping import amazon_scraper_sort
 
 
 # Define the functions for each page
 def home():
     st.markdown('**Welcome to the home page**')
     st.image("ITdevices.jpg", use_column_width=True)
+    st.html(
+        """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Furniture Haven</title>
+
+        <!-- Link to Google Fonts for Playfair Display -->
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
+
+        <style>
+          body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
+          }
+
+          .hero {
+            height: 100vh; /* Full viewport height */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the full area */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center alignment vertically */
+            justify-content: center; /* Center alignment horizontally */
+            transition: background-image 2s ease-in-out; /* Smooth transition when background image changes */
+          }
+
+          .tagline {
+            position: absolute;
+            top: 30px; /* Position the text near the top */
+            font-size: 24px;
+            color: white;
+            font-weight: 700; /* Bold weight for the tagline */
+          }
+
+          h1 {
+            color: white;
+            font-size: 100px; /* Larger text size */
+            font-weight: 300; /* Slimmer font weight for the heading */
+            text-align: center;
+            margin: 0;
+            animation: slideUp 2s forwards;
+          }
+
+          @keyframes slideUp {
+            from {
+              transform: translateY(100%);
+            }
+            to {
+              transform: translateY(-50%);
+            }
+          }
+        </style>
+        </head>
+        <body>
+
+        <div class="hero" id="hero">
+          <div class="tagline">Furniture Haven</div> <!-- Furniture Haven text at the top -->
+          <h1>Furniture, decor, and</h1>
+          <h1>beyond</h1>
+        </div>
+        <!-- JavaScript for background slideshow -->
+        <script>
+        const hero = document.getElementById('hero');
+
+        // Array of image paths for the slideshow
+        const images = [
+          "ITdevices.jpg", 
+          "ITdevices.jpg",
+          "ITdevices.jpg",
+          "ITdevices.jpg",
+          "ITdevices.jpg"
+        ];
+
+        let currentIndex = 0;
+
+        // Function to change the background image smoothly
+        function changeBackground() {
+          // Update the background image
+          currentIndex = (currentIndex + 1) % images.length;
+          hero.style.backgroundImage = `url(${images[currentIndex]})`;
+        }
+
+        // Set initial background image
+        hero.style.backgroundImage = `url(${images[0]})`;
+
+        // Change the background every 4 seconds
+        setInterval(changeBackground, 4000);
+        </script>
+
+        </body>
+        </html>
+
+        """        
+    )
 
     #st.image("./ITdevices.png")
 
