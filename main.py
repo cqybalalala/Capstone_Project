@@ -6,6 +6,9 @@ from llmmodel import suggestion_gen
 from llmmodel import json_translate
 from webscraping import amazon_scraper_sort
 from llmmodel import list_gen
+from image_search_function import it_product_analysis
+from email import send_email
+
 
 
 # Define the functions for each page
@@ -40,6 +43,9 @@ def product():
             list1.append(content)
         recommendation = list_gen(list1)
         st.write(recommendation)
+        if st.button('Send me an copy'):
+            gmail = st.text_input('Enter your email:' )
+            send_email(gmail, recommendation, 'Your recommendation')
 
 def image():
     st.title("IT Product Identifier")

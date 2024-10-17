@@ -35,5 +35,3 @@ def send_email(gmail, content, subject):
         login="custucct1013@gmail.com",
         password=api_key
         )
-
-send_email('cqyyy1018@gmail.com','hi', 'Your quote')
