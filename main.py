@@ -7,7 +7,7 @@ from llmmodel import json_translate
 from webscraping import amazon_scraper_sort
 from llmmodel import list_gen
 from image_search_function import it_product_analysis
-from smtp import send_email
+from email_server import to_send_email
 
 
 
@@ -45,7 +45,7 @@ def product():
         st.write(recommendation)
         if st.button('Send me an copy'):
             gmail = st.text_input('Enter your email:' )
-            send_email(gmail, recommendation, 'Your recommendation')
+            to_send_email(gmail, recommendation, 'Your recommendation')
 
 def image():
     st.title("IT Product Identifier")
