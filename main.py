@@ -26,11 +26,9 @@ def product():
         suggestion = suggestion_gen(product, budget, usage, requirement)
         st.write(suggestion)
         category_list = json_translate(suggestion)
-        st.write(category_list)
         list2 = ast.literal_eval(category_list)
         list1 = []
         for i in list2:
-            st.write(i)
             content = amazon_scraper_sort(i)
             list1.append(content)
         recommendation = list_gen(list1)
