@@ -31,7 +31,7 @@ def product():
         for i in list2:
             content = amazon_scraper_sort(i)
             list1.append(content)
-        recommendation = list_gen(list1)
+        recommendation = list_gen(list1, budget)
         st.write(recommendation)
         st.session_state.recommendation = recommendation
         if st.button('Send me a copy'):

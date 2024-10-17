@@ -34,9 +34,9 @@ selecting suitable personal or commercial IT devices tailored to their needs and
 
 
 
-def list_gen(json_list):
-  system_prompt = '''
-  based on the list given, each element of the list represent component of computer. Analse it and choose each product from each component category,the total for all product should not exceed the budget 1000
+def list_gen(json_list, budget):
+  system_prompt = f'''
+  based on the list given, each element of the list represent component of computer. Analse it and choose each product from each component category,the total for all product should not exceed the budget {budget} 
   Suggest two package for me to choose
   generate the result as format below:
   product name:
