@@ -13,7 +13,8 @@ from streamlit_option_menu import option_menu
 
 # Define the functions for each page
 def home():
-    st.write("Welcome to the home page")
+    st.markdown('**Welcome to the home page**‘)
+    st.image("ITdevices.jpg", use_column_width=True)
 
     #st.image("./ITdevices.png")
 
@@ -81,8 +82,8 @@ def email():
 
 # Create a horizontal navigation menu
 selected = option_menu(
-    menu_title="Main Menu",
-    options=["Home", "Product Suggestion", "Image-based Product Search", "Email"],
+    menu_title="IT Devices Suggestion Model",
+    options=["Home", "Product Suggestion", "Product Search", "Email"],
     icons=["house", "search", "cloud-upload", "envelope"],
     menu_icon="cast",
     default_index=0,
@@ -95,7 +96,7 @@ if selected == "Home":
 elif selected == "Product Suggestion":
     product()
 # Upload Section
-elif selected == "Image-based Product Search":
+elif selected == "Product Search":
     image()
 # Email Section
 if selected == "Email":
