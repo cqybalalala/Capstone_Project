@@ -74,7 +74,9 @@ def image():
 def email():
     st.write("Welcome to the email section")
     email = st.text_input("Enter your email:")
-    to_send_email(email, st.session_state.recommendation, 'Your Copy')
+    if st.button('Send me a copy'):
+        to_send_email(email, st.session_state.recommendation, 'Your Copy')
+    
 
 
 # Page navigation using a sidebar
