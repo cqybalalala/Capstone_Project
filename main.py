@@ -13,7 +13,7 @@ from streamlit_option_menu import option_menu
 
 # Define the functions for each page
 def home():
-    st.markdown('**Welcome to the home page**‘)
+    st.markdown('**Welcome to the home page**')
     st.image("ITdevices.jpg", use_column_width=True)
 
     #st.image("./ITdevices.png")
