@@ -12,7 +12,7 @@ from webscraping import amazon_scraper_sort
 
 # Define the functions for each page
 def home():
-    st.image("IT.JPEG", use_column_width=True)
+    st.image("IT.jpeg", use_column_width=True)
     st.html(
         """
         <!DOCTYPE html>
