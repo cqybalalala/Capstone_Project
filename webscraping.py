@@ -6,7 +6,7 @@ from openai import OpenAI
 
 
 def amazon_scraper(product):
-  api_key = os.environ['SCRAPER_API_KEY']
+    api_key = st.secrets['SCRAPER_API_KEY']
   url = f"https://www.amazon.com/s?k={product.replace(' ', '+')}"
 
   payload = {'api_key': api_key, 'url':url}
@@ -40,7 +40,7 @@ def amazon_scraper(product):
   return json_data
 
 def recommend_product(code):
-  client = OpenAI(api_key = os.environ['OPENAI_API_KEY'])
+  client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
   system_prompt = '''
   You are a IT devices sales man. You will be given a list of prodcut in json format, find the best 3 product with explanation.
   '''
@@ -60,7 +60,7 @@ def recommend_product(code):
 
 
 def amazon_scraper_sort(product):
-    api_key = os.environ['SCRAPER_API_KEY']
+    api_key = st.secrets['SCRAPER_API_KEY']
     url = f"https://www.amazon.com/s?k={product.replace(' ', '+')}"
 
     payload = {'api_key': api_key, 'url': url}

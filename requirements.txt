@@ -1,0 +1,9 @@
+streamlit
+openai
+requests
+beautifulsoup4
+lxml
+streamlit-option-menu
+pyarrow
+pillow
+google-generativeai

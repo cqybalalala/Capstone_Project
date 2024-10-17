@@ -1,3 +1,4 @@
+
 import streamlit as st
 from PIL import Image
 import json
@@ -17,8 +18,6 @@ def home():
     #st.image(image, caption = 'IT Devices')
 
     #st.image("ITdevices.jpg", caption="") 
-
-
 def product():
     st.write("Welcome to the product suggestion page")
 
@@ -41,22 +40,29 @@ def product():
             list1.append(content)
         recommendation = list_gen(list1)
         st.write(recommendation)
-        
-        
-            
-          
-            
-             
 
 def image():
-    st.write("Welcome to the image-based product search page")
-    st.write("Please upload an image of the product you want to search for")
+    st.title("IT Product Identifier")
 
-    if st.button("Upload"):
-        Image = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+    # Upload an image
+    product_image = st.file_uploader("Upload a picture of an IT product", type=["jpg", "jpeg", "png"])
 
-        #Image = it_product_analysis(image)
-        #st.image(Image)
+    if product_image is not None:
+        # Open and display the uploaded image
+        img = PILImage.open(product_image)
+        img.thumbnail((800, 800))  # Resize the image to max 800x800 pixels
+        st.image(img, caption="Uploaded IT Product Image", use_column_width=True)
+
+        # Analyze the image for IT product identification
+        if st.button("Analyze Product"):
+            try:
+                result = it_product_analysis(img)
+                # Display the result from the it_product_analysis function
+                st.write(result)
+            except Exception as e:
+                st.error(f"An error occurred: {str(e)}")
+    else:
+        st.write("Please upload a picture of an IT product to identify.")
 
 def email():
     st.write("Welcome to the email section")
@@ -65,6 +71,8 @@ def email():
 
 # Page navigation using a sidebar
 page = st.sidebar.selectbox("Choose a page", ["Home", "Product Suggestion", "Image-based Product Search", "Email"])
+
+
 
 # Show the selected page
 if page == "Home":

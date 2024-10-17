@@ -23,6 +23,7 @@ def configure_email(subject, body, to_email, from_email, smtp_server, port, logi
         print(f"Failed to send email: {e}")#debugging
 
 def send_email(gmail, content, subject):
+    api_key = st.secrets['YOUR_EMAIL_KEY']
     configure_email(
         subject= subject,
         body= content,        
@@ -31,7 +32,7 @@ def send_email(gmail, content, subject):
         smtp_server="smtp.gmail.com",
         port=587,
         login="custucct1013@gmail.com",
-        password=os.environ['YOUR_EMAIL_KEY']
+        password=api_key
         )
 
 send_email('cqyyy1018@gmail.com','hi', 'Your quote')

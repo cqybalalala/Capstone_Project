@@ -4,7 +4,7 @@ import os
 from openai import OpenAI
 import json
 
-client = OpenAI(api_key = os.environ['OPENAI_API_KEY'])
+client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
 
 
 def suggestion_gen(product, budget, usage, requirement):
