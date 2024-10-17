@@ -76,6 +76,7 @@ def email():
     email = st.text_input("Enter your email:")
     if st.button('Send me a copy'):
         to_send_email(email, st.session_state.recommendation, 'Your Copy')
+        st.write('Email Sent!')
     
 
 
