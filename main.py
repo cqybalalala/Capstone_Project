@@ -8,189 +8,10 @@ from email_server import to_send_email
 from image_search_function import it_product_analysis
 from llmmodel import json_translate, list_gen, suggestion_gen
 from webscraping import amazon_scraper_sort
+from landing_page import home
 
 
 # Define the functions for each page
-def home():
-    st.html(
-        """
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Playfair Display Example</title>
-
-            <!-- Link to Google Fonts for Playfair Display -->
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
-
-            <style>
-                body {
-                    font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
-                    margin: 0;
-                    padding: 20px;
-                    background-color: #f4f4f4; /* Light background for contrast */
-                }
-
-                h1 {
-                    font-size: 55px; /* Set font size to 50 pixels */
-                    color: #333; /* Dark color for text */
-                    margin-bottom: 20px; /* Add some space below the header */
-                }
-
-                p {
-                    font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
-                    font-size: 36px; /* Optional: Set a specific size for paragraph text */
-                    color: #555; /* Slightly lighter color for paragraph text */
-                }
-            </style>
-        </head>
-        <body>
-
-            <h1>Welcome to Playfair Display</h1>
-            <p>This is an example of text using the Playfair Display font at a size of 50 pixels for the header and a more standard size for the body text.</p>
-
-        </body>
-        </html>
-
-    """    
-    )
-    st.image("IT.jpeg", use_column_width=True)
-    st.html(
-        """
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Playfair Display Example</title>
-
-            <!-- Link to Google Fonts for Playfair Display -->
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
-
-            <style>
-                body {
-                    font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
-                    margin: 0;
-                    padding: 20px;
-                    background-color: #f4f4f4; /* Light background for contrast */
-                }
-
-                h1 {
-                    font-size: 30px; /* Set font size to 50 pixels */
-                    color: #333; /* Dark color for text */
-                    margin-bottom: 20px; /* Add some space below the header */
-                }
-
-                p {
-                    font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
-                    font-size: 22px; /* Optional: Set a specific size for paragraph text */
-                    color: #555; /* Slightly lighter color for paragraph text */
-                }
-            </style>
-        </head>
-        <body>
-
-            <h1>1. Product Suggesstion </h1>
-            <p>This is an example of text using the Playfair Display font at a size of 50 pixels for the header and a more standard size for the body text.</p>
-
-        </body>
-        </html>
-
-    """    
-    )
-    st.image("advice.jpg", use_column_width=True)
-    st.html(
-        """
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Playfair Display Example</title>
-
-            <!-- Link to Google Fonts for Playfair Display -->
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
-
-            <style>
-                body {
-                    font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
-                    margin: 0;
-                    padding: 20px;
-                    background-color: #f4f4f4; /* Light background for contrast */
-                }
-
-                h1 {
-                    font-size: 30px; /* Set font size to 50 pixels */
-                    color: #333; /* Dark color for text */
-                    margin-bottom: 20px; /* Add some space below the header */
-                }
-
-                p {
-                    font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
-                    font-size: 22px; /* Optional: Set a specific size for paragraph text */
-                    color: #555; /* Slightly lighter color for paragraph text */
-                }
-            </style>
-        </head>
-        <body>
-
-            <h1>2. Image-Based Product Search Function </h1>
-            <p>This is an example of text using the Playfair Display font at a size of 50 pixels for the header and a more standard size for the body text.</p>
-
-        </body>
-        </html>
-
-    """    
-    )
-    st.image("image.jpg", use_column_width=True)
-    st.html(
-        """
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Playfair Display Example</title>
-
-            <!-- Link to Google Fonts for Playfair Display -->
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
-
-            <style>
-                body {
-                    font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
-                    margin: 0;
-                    padding: 20px;
-                    background-color: #f4f4f4; /* Light background for contrast */
-                }
-
-                h1 {
-                    font-size: 30px; /* Set font size to 50 pixels */
-                    color: #333; /* Dark color for text */
-                    margin-bottom: 20px; /* Add some space below the header */
-                }
-
-                p {
-                    font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
-                    font-size: 22px; /* Optional: Set a specific size for paragraph text */
-                    color: #555; /* Slightly lighter color for paragraph text */
-                }
-            </style>
-        </head>
-        <body>
-
-            <h1>3. Assemble Service...(Future) </h1>
-            <p>Provide </p>
-
-        </body>
-        </html>
-
-    """    
-    )
-    st.image("service.jpg", use_column_width=True)
-
-    
-
 def product():
     st.image("advice.jpg", use_column_width=True)
     st.write("Welcome to the product suggestion page")
@@ -255,7 +76,7 @@ def email():
 # Create a horizontal navigation menu
 selected = option_menu(
     menu_title="IT Devices Suggestion Model",
-    options=["Home", "Suggestion", "Search", "Email"],
+    options=["Home", "Suggest", "Search", "Email"],
     icons=["house", "search", "cloud-upload", "envelope"],
     menu_icon="cast",
     default_index=0,
@@ -265,7 +86,7 @@ selected = option_menu(
 if selected == "Home":
     home()
 # Product Suggestion Section
-elif selected == "Suggestion":
+elif selected == "Suggest":
     product()
 # Upload Section
 elif selected == "Search":
