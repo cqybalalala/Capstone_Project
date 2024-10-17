@@ -8,7 +8,7 @@ from webscraping import amazon_scraper_sort
 from llmmodel import list_gen
 from image_search_function import it_product_analysis
 from email_server import to_send_email
-
+from streamlit_option_menu import option_menu
 
 
 # Define the functions for each page
@@ -79,18 +79,24 @@ def email():
         st.write('Email Sent!')
     
 
-
-# Page navigation using a sidebar
-page = st.sidebar.selectbox("Choose a page", ["Home", "Product Suggestion", "Image-based Product Search", "Email"])
-
-
-
-# Show the selected page
-if page == "Home":
+# Create a horizontal navigation menu
+selected = option_menu(
+    menu_title="Main Menu",
+    options=["Home", "Product Suggestion", "Image-based Product Search", "Email"],
+    icons=["house", "search", "cloud-upload", "envelope"],
+    menu_icon="cast",
+    default_index=0,
+    orientation="horizontal",
+)
+# Home Section
+if selected == "Home":
     home()
-elif page == "Product Suggestion":
+# Product Suggestion Section
+elif selected == "Product Suggestion":
     product()
-elif page == "Image-based Product Search":
+# Upload Section
+elif selected == "Image-based Product Search":
     image()
-elif page == "Email":
+# Email Section
+if selected == "Email":
     email()
