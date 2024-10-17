@@ -12,7 +12,6 @@ from webscraping import amazon_scraper_sort
 
 # Define the functions for each page
 def home():
-    st.image("IT.jpeg", use_column_width=True)
     st.html(
         """
         <!DOCTYPE html>
@@ -100,6 +99,95 @@ def home():
 
     """    
     )
+    st.image("IT.jpeg", use_column_width=True)
+    st.html(
+        """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Playfair Display Example</title>
+
+            <!-- Link to Google Fonts for Playfair Display -->
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
+
+            <style>
+                body {
+                    font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f4f4f4; /* Light background for contrast */
+                }
+
+                h1 {
+                    font-size: 32px; /* Set font size to 50 pixels */
+                    color: #333; /* Dark color for text */
+                    margin-bottom: 20px; /* Add some space below the header */
+                }
+
+                p {
+                    font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
+                    font-size: 25px; /* Optional: Set a specific size for paragraph text */
+                    color: #555; /* Slightly lighter color for paragraph text */
+                }
+            </style>
+        </head>
+        <body>
+
+            <h1>2. Image-Based Product Search Function </h1>
+            <p>This is an example of text using the Playfair Display font at a size of 50 pixels for the header and a more standard size for the body text.</p>
+
+        </body>
+        </html>
+
+    """    
+    )
+    st.image("image.jpg", use_column_width=True)
+    st.html(
+        """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Playfair Display Example</title>
+
+            <!-- Link to Google Fonts for Playfair Display -->
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;700&display=swap" rel="stylesheet">
+
+            <style>
+                body {
+                    font-family: 'Playfair Display', serif; /* Use Playfair Display for body text */
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f4f4f4; /* Light background for contrast */
+                }
+
+                h1 {
+                    font-size: 32px; /* Set font size to 50 pixels */
+                    color: #333; /* Dark color for text */
+                    margin-bottom: 20px; /* Add some space below the header */
+                }
+
+                p {
+                    font-family: 'Playfair Display', serif; /* Ensure the paragraph also uses Playfair Display */
+                    font-size: 25px; /* Optional: Set a specific size for paragraph text */
+                    color: #555; /* Slightly lighter color for paragraph text */
+                }
+            </style>
+        </head>
+        <body>
+
+            <h1>3. Assemble Service...(Future) </h1>
+            <p>Provide </p>
+
+        </body>
+        </html>
+
+    """    
+    )
+    st.image("service.jpg", use_column_width=True)
 
     
 
