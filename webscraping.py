@@ -71,23 +71,23 @@ def amazon_scraper_sort(product):
 
 def amazon_scraper(product):
     api_key = st.secrets['SCRAPER_API_KEY']
-  url = f"https://www.amazon.com/s?k={product.replace(' ', '+')}"
+    url = f"https://www.amazon.com/s?k={product.replace(' ', '+')}"
 
-  payload = {'api_key': api_key, 'url':url}
-  resp = requests.get('https://api.ecommerceapi.io/amazon_search', params=payload)
+    payload = {'api_key': api_key, 'url':url}
+    resp = requests.get('https://api.ecommerceapi.io/amazon_search', params=payload)
   
-  url = f"https://www.amazon.com/s?k={product.replace(' ', '+')}"
+    url = f"https://www.amazon.com/s?k={product.replace(' ', '+')}"
   
-  data = json.loads(resp.text)
-  sponsored_products = data["results"]
-  json_data = json.dumps(sponsored_products)
+    data = json.loads(resp.text)
+    sponsored_products = data["results"]
+    json_data = json.dumps(sponsored_products)
 
-  # Check if there are products available
-  if not sponsored_products:
+    # Check if there are products available
+    if not sponsored_products:
       print("No products found.")
-  else:
-      # Separate different products and print their details
-      for index, product in enumerate(sponsored_products):
+    else:
+        # Separate different products and print their details
+        for index, product in enumerate(sponsored_products):
           print(f"Product {index + 1}:")
           title = product.get('title', 'Not available')
           price = product.get('price_string', 'Not available')
@@ -101,7 +101,7 @@ def amazon_scraper(product):
           print(f"  Total Reviews: {total_reviews}")
           print(f"  URL: {url}\n")
         
-  return json_data
+    return json_data
 
 
 
