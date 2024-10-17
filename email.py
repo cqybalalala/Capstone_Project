@@ -3,6 +3,7 @@
 import smtplib
 from email.message import EmailMessage
 import os
+import streamlit as st
 
 def configure_email(subject, body, to_email, from_email, smtp_server, port, login, password):
     #create the email message

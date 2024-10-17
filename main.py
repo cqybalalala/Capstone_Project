@@ -8,6 +8,7 @@ from llmmodel import json_translate
 from webscraping import amazon_scraper_sort, recommend_product
 from llmmodel import list_gen
 
+
 # Define the functions for each page
 def home():
     st.write("Welcome to the home page")
