@@ -9,6 +9,7 @@ def recommend_product(product_list):
   system_prompt = '''
     based on the list given. Select the top 3 products based on the review total, rating, and price. Provided short reason to support you point.
     generate the result as format below:
+    Below are the recommended product from Amazon.com
     product name:
     price:
     url:

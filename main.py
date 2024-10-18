@@ -58,9 +58,7 @@ def image():
                 # Display the result from the it_product_analysis function
                 st.write(result)
                 recommended_product = product_extract(result)
-                st.write(recommended_product)
                 product_result = amazon_scraper_sort(recommended_product)
-                st.write(product_result)
                 shortlisted_product = recommend_product(product_result)
                 st.write(shortlisted_product)
                 
