@@ -4,17 +4,23 @@ import streamlit as st
 import requests
 from openai import OpenAI
 
-def recommend_product(code):
+def recommend_product(product_list):
   client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
   system_prompt = '''
-  You are a IT devices sales man. You will be given a list of prodcut in json format, find the best 3 product with explanation.
-  '''
-
+    based on the list given. Select the top 3 products based on the review total, rating, and price. Provided short reason to support you point.
+    generate the result as format below:
+    product name:
+    price:
+    url:
+    rating:
+    reason:
+    '''
+ 
   response = client.chat.completions.create(
       model = 'gpt-4o-mini',
       messages = [
           {'role': 'system', 'content': system_prompt},
-          {'role': 'user', 'content': code }
+          {'role': 'user', 'content': f'{product_list}' }
       ],
       temperature = 1.1,
       max_tokens = 2000

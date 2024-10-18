@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 from email_server import to_send_email
 from image_search_function import it_product_analysis
 from llmmodel import json_translate, list_gen, suggestion_gen, product_extract
-from webscraping import amazon_scraper_sort
+from webscraping import amazon_scraper_sort, recommend_product
 from landing_page import home
 
 
@@ -59,6 +59,11 @@ def image():
                 st.write(result)
                 recommended_product = product_extract(result)
                 st.write(recommended_product)
+                product_result = amazon_scraper_sort(recommended_product)
+                st.write(product_result)
+                shortlisted_product = recommend_product(product_result)
+                st.write(shortlisted_product)
+                
                 
 
 
