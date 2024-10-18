@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 
 from email_server import to_send_email
 from image_search_function import it_product_analysis
-from llmmodel import json_translate, list_gen, suggestion_gen
+from llmmodel import json_translate, list_gen, suggestion_gen, product_extract
 from webscraping import amazon_scraper_sort
 from landing_page import home
 
@@ -57,6 +57,12 @@ def image():
                 result = it_product_analysis(img)
                 # Display the result from the it_product_analysis function
                 st.write(result)
+                recommended_product = product_extract(result)
+                st.write(recommended_product)
+                
+
+
+            
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
     else:

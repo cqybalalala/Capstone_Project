@@ -71,4 +71,38 @@ def json_translate(suggestion):
     )
 
     return response.choices[0].message.content
-    
+
+
+def product_extract(suggestion):
+    system_prompt = '''
+    Your will be given an output from a vison model which help users to identify the product. Extract the product from the list and output only the product name. If the model output cannot identify the product name or product model. You need to extract the product type.(eg. mouse)
+    '''
+    response = client.chat.completions.create(
+          model = 'gpt-4o-mini',
+          messages = [
+              
+              {'role': 'system', 'content': '''
+              The image shows an Apple Magic Mouse 2.
+
+              Specs:
+
+              Wireless Bluetooth connection
+              Rechargeable battery
+              Multi-touch surface for gestures
+              Compatible with macOS and Windows
+              Suggestions for similar products:
+
+              Wireless mice: Logitech MX Master 3, Razer Viper Ultimate, Microsoft Arc Mouse
+              Apple Mice: Apple Magic Trackpad 2, Apple Magic Mouse (first generation)
+              Other computer accessories: Keyboards, mousepads, webcams
+              '''},
+              {'role': 'assistant', 'content': 'Apple Magic Mouse 2'},
+              {'role': 'system', 'content': system_prompt},
+              {'role': 'assistant', 'content': suggestion},
+              
+          ],
+          temperature = 1.1,
+          max_tokens = 2000
+    )
+
+    return response.choices[0].message.content
